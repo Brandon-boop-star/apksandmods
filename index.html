@@ -1,346 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hakuto - Apps & Mods</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<style>
- body{font-family:system-ui;background:#0a0a0a;color:#fafafa}
-</style>
 </head>
-<body class="min-h-screen">
-<header class="sticky top-0 z-50 backdrop-blur-xl bg-black/70 border-b border-zinc-900">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
+<body class="bg-[#080808] text-zinc-100 min-h-screen antialiased">
+<header class="sticky top-0 z-40 backdrop-blur-xl bg-black/60 border-b border-zinc-900">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <div class="flex items-center gap-3">
-      <img src="Hakuto.jpg" onerror="this.style.display='none'" class="w-9 h-9 rounded-xl object-cover border border-zinc-800"/>
-      <div>
-        <h1 class="font-bold tracking-tight">Hakuto</h1>
-        <p class="text-[11px] text-zinc-500 -mt-1">Apps & Mods - v1.0 - GitHub Releases</p>
-      </div>
+      <img src="Hakuto.jpg" onerror="this.style.display='none'" class="w-9 h-9 rounded-xl object-cover border border-zinc-800">
+      <div><div class="font-bold text-[15px] tracking-tight">Hakuto</div><div class="text-[10px] text-zinc-500 tracking-widest uppercase -mt-0.5">Apps & Mods • GitHub Releases</div></div>
     </div>
-    <a href="https://github.com/Brandon-boop-star/apksandmods/releases/tag/v1.0" target="_blank" class="text-xs px-3 py-2 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white">View Releases</a>
+    <a href="https://github.com/Brandon-boop-star/apksandmods/releases/tag/v1.0" target="_blank" class="text-[11px] px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white transition">v1.0 Releases</a>
   </div>
 </header>
 
-<div class="max-w-7xl mx-auto px-5 md:px-8 pt-10 pb-6">
-  <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-3">19 Apps + Mod Pack</h2>
-  <p class="text-zinc-400 max-w-2xl text-[15px]">All downloads hosted directly on GitHub Releases. Individual downloads only.</p>
-  <div class="mt-6 flex flex-wrap gap-2">
-    <input id="search" placeholder="Search apps..." class="bg-zinc-900 border border-zinc-800 rounded-full px-4 py-2 text-sm w-full md:w-80 outline-none focus:border-zinc-700"/>
-    <div class="flex gap-1.5 flex-wrap" id="filters">
-      <button data-filter="all" class="filter-btn active px-3 py-2 rounded-full text-xs bg-white text-black">All</button>
-      <button data-filter="Tools" class="filter-btn px-3 py-2 rounded-full text-xs bg-zinc-900 border border-zinc-800 text-zinc-400">Tools</button>
-      <button data-filter="Entertainment" class="filter-btn px-3 py-2 rounded-full text-xs bg-zinc-900 border border-zinc-800 text-zinc-400">Entertainment</button>
-      <button data-filter="Gaming" class="filter-btn px-3 py-2 rounded-full text-xs bg-zinc-900 border border-zinc-800 text-zinc-400">Gaming</button>
-      <button data-filter="Mods" class="filter-btn px-3 py-2 rounded-full text-xs bg-zinc-900 border border-zinc-800 text-zinc-400">Mods</button>
+<div class="max-w-7xl mx-auto px-6 pt-10 pb-6">
+  <div class="flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <h1 class="text-[32px] md:text-[44px] font-bold tracking-tighter leading-none">19 Apps + 1 Mod Pack</h1>
+      <p class="text-zinc-400 text-[14px] mt-2 max-w-xl">Clean builds, no ads. APK icons for apps, ZIP icon for the L4D2 mod pack. Direct from GitHub Releases.</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class="flex items-center gap-2 text-[11px] text-zinc-500"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>APK</div>
+      <div class="flex items-center gap-2 text-[11px] text-zinc-500"><span class="w-2 h-2 rounded-full bg-amber-400"></span>ZIP</div>
+    </div>
+  </div>
+  <div class="mt-6 flex flex-col md:flex-row gap-3">
+    <input id="search" placeholder="Search apps, mods..." class="bg-zinc-900 border border-zinc-800 rounded-full px-4 py-2.5 text-sm w-full md:w-80 outline-none focus:border-zinc-700 placeholder:text-zinc-600">
+    <div class="flex gap-1.5 flex-wrap">
+      <button data-f="all" class="fbtn active bg-white text-black px-4 py-2 rounded-full text-xs font-medium">All</button>
+      <button data-f="tools" class="fbtn bg-zinc-900 border border-zinc-800 text-zinc-400 px-4 py-2 rounded-full text-xs">Tools</button>
+      <button data-f="entertainment" class="fbtn bg-zinc-900 border border-zinc-800 text-zinc-400 px-4 py-2 rounded-full text-xs">Entertainment</button>
+      <button data-f="gaming" class="fbtn bg-zinc-900 border border-zinc-800 text-zinc-400 px-4 py-2 rounded-full text-xs">Gaming</button>
+      <button data-f="mods" class="fbtn bg-zinc-900 border border-zinc-800 text-zinc-400 px-4 py-2 rounded-full text-xs">Mods</button>
     </div>
   </div>
 </div>
 
-<main class="max-w-7xl mx-auto px-5 md:px-8 pb-20">
-  <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="anyme x" data-cat="Entertainment">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Entertainment</span>
+<main class="max-w-7xl mx-auto px-6 pb-20">
+  <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="anyme x anyme.x.apk" data-cat="entertainment">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Entertainment</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">AnYme X</h3>
-      <p class="text-xs text-zinc-500 mb-1">anyme.x.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Anime streaming</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/anyme.x.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">AnYme X</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">anyme.x.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Anime streaming</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/anyme.x.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="game booster plus" data-cat="Gaming">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Gaming</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="game booster plus game.booster.plus.apk" data-cat="gaming">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Gaming</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Game Booster Plus</h3>
-      <p class="text-xs text-zinc-500 mb-1">game.booster.plus.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Game optimization</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/game.booster.plus.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Game Booster Plus</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">game.booster.plus.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Game optimization</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/game.booster.plus.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="game plugins" data-cat="Gaming">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Gaming</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="game plugins game.plugins.apk" data-cat="gaming">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Gaming</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Game Plugins</h3>
-      <p class="text-xs text-zinc-500 mb-1">game.plugins.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Samsung game plugins</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/game.plugins.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Game Plugins</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">game.plugins.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Samsung game plugins</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/game.plugins.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="instagram mod" data-cat="Social">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Social</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="instagram mod instagram.apk" data-cat="social">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Social</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Instagram Mod</h3>
-      <p class="text-xs text-zinc-500 mb-1">instagram.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Instagram modded</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/instagram.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Instagram Mod</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">instagram.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Instagram modded</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/instagram.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="kotatsu" data-cat="Reading">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Reading</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="kotatsu kotatsu.apk" data-cat="reading">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Reading</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Kotatsu</h3>
-      <p class="text-xs text-zinc-500 mb-1">kotatsu.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Manga reader</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/kotatsu.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Kotatsu</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">kotatsu.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Manga reader</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/kotatsu.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="left 4 dead 2 mods" data-cat="Mods">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">🎮</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Mods</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="left 4 dead 2 mods left.4.dead.2.mods.zip" data-cat="mods">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-amber-500/30 bg-amber-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#FBBF24" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#FBBF24" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 14h8M8 17h8M8 11h3" stroke="#FBBF24" stroke-width="1.4" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#FBBF24" font-family="monospace">ZIP</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Mods</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Left 4 Dead 2 Mods</h3>
-      <p class="text-xs text-zinc-500 mb-1">left.4.dead.2.mods.zip</p>
-      <p class="text-[13px] text-zinc-400 mb-4">120+ L4D2 mods pack</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/left.4.dead.2.mods.zip" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Left 4 Dead 2 Mods</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">left.4.dead.2.mods.zip</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">120+ L4D2 mods pack - 1.2GB</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/left.4.dead.2.mods.zip" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="microg services" data-cat="Tools">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Tools</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="microg services microg.services.apk" data-cat="tools">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Tools</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">microG Services</h3>
-      <p class="text-xs text-zinc-500 mb-1">microg.services.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Google services replacement</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/microg.services.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">microG Services</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">microg.services.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Google services replacement</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/microg.services.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="moviebox" data-cat="Entertainment">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Entertainment</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="moviebox moviebox.apk" data-cat="entertainment">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Entertainment</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">MovieBox</h3>
-      <p class="text-xs text-zinc-500 mb-1">moviebox.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Movies & shows</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/moviebox.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">MovieBox</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">moviebox.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Movies & shows</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/moviebox.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="oldroll" data-cat="Photography">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Photography</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="oldroll oldroll.apk" data-cat="photography">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Photography</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">OldRoll</h3>
-      <p class="text-xs text-zinc-500 mb-1">oldroll.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Vintage camera</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/oldroll.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">OldRoll</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">oldroll.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Vintage camera</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/oldroll.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="password generator" data-cat="Security">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Security</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="password generator password.generator.apk" data-cat="security">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Security</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Password Generator</h3>
-      <p class="text-xs text-zinc-500 mb-1">password.generator.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Secure passwords</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/password.generator.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Password Generator</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">password.generator.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Secure passwords</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/password.generator.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="priority mode" data-cat="Productivity">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Productivity</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="priority mode priority.mode.apk" data-cat="productivity">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Productivity</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Priority Mode</h3>
-      <p class="text-xs text-zinc-500 mb-1">priority.mode.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Focus mode</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/priority.mode.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Priority Mode</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">priority.mode.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Focus mode</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/priority.mode.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="seal" data-cat="Tools">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Tools</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="seal seal.apk" data-cat="tools">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Tools</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Seal</h3>
-      <p class="text-xs text-zinc-500 mb-1">seal.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Video downloader</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/seal.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Seal</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">seal.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Video downloader</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/seal.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="shizuku" data-cat="Tools">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Tools</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="shizuku shizuku.apk" data-cat="tools">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Tools</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Shizuku</h3>
-      <p class="text-xs text-zinc-500 mb-1">shizuku.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">System API access</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/shizuku.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Shizuku</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">shizuku.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">System API access</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/shizuku.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="shootingplus v3" data-cat="Gaming">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Gaming</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="shootingplus v3 shootingplus.v3.apk" data-cat="gaming">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Gaming</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">ShootingPlus V3</h3>
-      <p class="text-xs text-zinc-500 mb-1">shootingplus.v3.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Gamepad mapper</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/shootingplus.v3.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">ShootingPlus V3</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">shootingplus.v3.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Gamepad mapper</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/shootingplus.v3.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="spowlo" data-cat="Music">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Music</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="spowlo spowlo.apk" data-cat="music">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Music</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Spowlo</h3>
-      <p class="text-xs text-zinc-500 mb-1">spowlo.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Spotify downloader</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/spowlo.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Spowlo</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">spowlo.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Spotify downloader</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/spowlo.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="vivid id" data-cat="Tools">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Tools</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="vivid id vivid.id.apk" data-cat="tools">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Tools</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Vivid ID</h3>
-      <p class="text-xs text-zinc-500 mb-1">vivid.id.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Screen calibration</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/vivid.id.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Vivid ID</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">vivid.id.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Screen calibration</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/vivid.id.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="weezer" data-cat="Music">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Music</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="weezer weezer.apk" data-cat="music">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Music</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">Weezer</h3>
-      <p class="text-xs text-zinc-500 mb-1">weezer.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Music player</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/weezer.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">Weezer</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">weezer.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Music player</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/weezer.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="wps office" data-cat="Productivity">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Productivity</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="wps office wps.office.apk" data-cat="productivity">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Productivity</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">WPS Office</h3>
-      <p class="text-xs text-zinc-500 mb-1">wps.office.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">Office suite</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/wps.office.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">WPS Office</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">wps.office.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">Office suite</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/wps.office.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="youtube revanced" data-cat="Entertainment">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Entertainment</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="youtube revanced youtube.revanced.apk" data-cat="entertainment">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Entertainment</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">YouTube Revanced</h3>
-      <p class="text-xs text-zinc-500 mb-1">youtube.revanced.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">YouTube premium mod</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/youtube.revanced.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">YouTube Revanced</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">youtube.revanced.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">YouTube premium mod</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/youtube.revanced.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
     
-    <div class="app-card group bg-zinc-900/70 backdrop-blur border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 transition" data-name="zarchiver pro" data-cat="Tools">
-      <div class="flex items-start justify-between mb-3">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center text-xl border border-zinc-800">📱</div>
-        <span class="text-[11px] px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400">Tools</span>
+    <div class="app-card bg-zinc-900/60 border border-zinc-800 rounded-2xl p-5 hover:border-zinc-700 hover:bg-zinc-900/80 transition-all" data-name="zarchiver pro zarchiver.pro.apk" data-cat="tools">
+      <div class="flex justify-between items-start mb-4">
+        <div class="w-12 h-12 rounded-xl border-emerald-500/30 bg-emerald-500/10 flex items-center justify-center border backdrop-blur"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 2h7l4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#3DDC84" fill-opacity="0.18"/><path d="M14 2v4h4" stroke="#3DDC84" stroke-width="1.4" stroke-linejoin="round"/><rect x="7.5" y="10" width="9" height="6" rx="1.5" stroke="#3DDC84" stroke-width="1.4"/><path d="M8.5 13.5h.01M12 13.5h.01M15.5 13.5h.01" stroke="#3DDC84" stroke-width="2" stroke-linecap="round"/><text x="12" y="9" text-anchor="middle" font-size="5.5" font-weight="700" fill="#3DDC84" font-family="monospace">APK</text></svg></div>
+        <span class="text-[10px] tracking-wider font-medium px-2.5 py-1 rounded-full bg-zinc-800 border border-zinc-700 text-zinc-400 uppercase">Tools</span>
       </div>
-      <h3 class="font-semibold text-white mb-1">ZArchiver Pro</h3>
-      <p class="text-xs text-zinc-500 mb-1">zarchiver.pro.apk</p>
-      <p class="text-[13px] text-zinc-400 mb-4">File archiver pro</p>
-      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/zarchiver.pro.apk" target="_blank" rel="noopener" class="block w-full text-center bg-white text-black text-sm font-medium py-2.5 rounded-xl hover:bg-zinc-200 transition">
+      <h3 class="font-semibold text-[15px] text-white leading-tight">ZArchiver Pro</h3>
+      <p class="text-[11px] font-mono text-zinc-500 mt-0.5 truncate">zarchiver.pro.apk</p>
+      <p class="text-[13px] text-zinc-400 mt-2 mb-4 leading-snug">File archiver pro</p>
+      <a href="https://github.com/Brandon-boop-star/apksandmods/releases/download/v1.0/zarchiver.pro.apk" class="flex items-center justify-center gap-2 w-full bg-white text-black text-[13px] font-semibold py-2.5 rounded-xl hover:bg-zinc-100 active:scale-[0.98] transition">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Download
       </a>
     </div>
-    
-  </div>
-  <p id="no-results" class="hidden text-center text-zinc-500 mt-12">No apps found</p>
+    </div>
+  <p id="empty" class="hidden text-center text-zinc-600 mt-16 text-sm">No results</p>
 </main>
 
-<footer class="border-t border-zinc-900 py-8 text-center text-xs text-zinc-600">
-  Hosted on GitHub Pages - Downloads from GitHub Releases v1.0 - 2026 Hakuto
-</footer>
+<footer class="border-t border-zinc-900 py-8 text-center text-[11px] text-zinc-600 tracking-wide">© 2026 HAKUTO • HOSTED ON GITHUB PAGES • FILES FROM RELEASES v1.0</footer>
 
 <script>
-const search = document.getElementById('search');
-const cards = [...document.querySelectorAll('.app-card')];
-const noResults = document.getElementById('no-results');
-let activeCat = 'all';
-function doFilter(){
-  const q = search.value.toLowerCase();
-  let visible=0;
-  cards.forEach(c=>{
-    const name = c.getAttribute('data-name');
-    const cat = c.getAttribute('data-cat');
-    const matchName = name.includes(q);
-    const matchCat = activeCat==='all' || cat===activeCat;
-    const show = matchName && matchCat;
-    c.style.display = show ? '' : 'none';
-    if(show) visible++;
-  });
-  noResults.classList.toggle('hidden', visible>0);
+const s=document.getElementById('search'), g=[...document.querySelectorAll('.app-card')], e=document.getElementById('empty');
+let cat='all';
+function filt(){
+ const q=s.value.toLowerCase(); let v=0;
+ g.forEach(c=>{
+  const n=c.dataset.name, cc=c.dataset.cat;
+  const ok = n.includes(q) && (cat==='all' || cc===cat);
+  c.style.display= ok ? '' : 'none';
+  if(ok) v++;
+ });
+ e.classList.toggle('hidden', v>0);
 }
-search.addEventListener('input', doFilter);
-document.querySelectorAll('.filter-btn').forEach(b=>{
-  b.addEventListener('click', ()=>{
-    document.querySelectorAll('.filter-btn').forEach(x=>{
-      x.classList.remove('active','bg-white','text-black');
-      x.classList.add('bg-zinc-900','border','border-zinc-800','text-zinc-400');
-    });
-    b.classList.add('active','bg-white','text-black');
-    b.classList.remove('bg-zinc-900','border','border-zinc-800','text-zinc-400');
-    activeCat = b.getAttribute('data-filter');
-    doFilter();
-  });
+s.addEventListener('input', filt);
+document.querySelectorAll('.fbtn').forEach(b=>{
+ b.addEventListener('click', ()=>{
+  document.querySelectorAll('.fbtn').forEach(x=>{x.classList.remove('active','bg-white','text-black'); x.classList.add('bg-zinc-900','border','border-zinc-800','text-zinc-400')});
+  b.classList.add('bg-white','text-black','active'); b.classList.remove('bg-zinc-900','border','border-zinc-800','text-zinc-400');
+  cat=b.dataset.f; filt();
+ });
 });
 </script>
-</body>
-</html>
+</body></html>
